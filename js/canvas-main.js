@@ -5,6 +5,8 @@ let ctx
 
 let currElement = ''
 
+const X_FACTOR = 20
+const Y_FACTOR = 20
 
 function init() {
     canvas = document.querySelector('#my-canvas');
@@ -102,9 +104,11 @@ function drawDots(x, y) {
 
 function drawSquare(x, y) {
     //TODO: isFill if yes to make it fill
-    ctx.rect(x, y, 100, 100)
-    ctx.fillStyle = getColor()
-        // ctx.fillRect(x, y, 100, 100)
+    // USE : ctx.fillRect(x, y, 100, 100)
+    // AND : ctx.fill()
+
+    ctx.rect(x, y, movementX + X_FACTOR + 10, movementY + Y_FACTOR)
+    ctx.strokeStyle = getColor()
     ctx.stroke()
         // ctx.fill()
 }
