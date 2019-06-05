@@ -10,7 +10,7 @@ let currElement = ''
 function init() {
     canvas = document.querySelector('#my-canvas');
     ctx = canvas.getContext('2d')
-    
+
     canvas.width = window.innerWidth - 100
     canvas.height = window.innerHeight - 200
 }
@@ -38,6 +38,12 @@ function draw(ev) {
         case 'circle':
             drawCircle(offsetX, offsetY)
             break;
+        case 'arc':
+            drawArc(offsetX, offsetY)
+            break;
+        case 'line':
+            drawLine(offsetX, offsetY)
+            break;
     }
     ctx.restore()
 }
@@ -50,14 +56,18 @@ function onStopDraw() {
     gIsDraw = false
 }
 
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+
 
 function drawTriangle(x, y) {
     // TODO: isFill if yes to make it fill
     // TODO: USER CHOOSE lineWidth 
     ctx.beginPath();
     ctx.moveTo(x, y);
-    ctx.lineTo(x-50, y-30);
-    ctx.lineTo(x+30, y+50);
+    ctx.lineTo(x - 50, y - 30);
+    ctx.lineTo(x + 30, y + 50);
     ctx.closePath()
     ctx.lineWidth = 1;
     ctx.strokeStyle = getColor()
@@ -66,8 +76,15 @@ function drawTriangle(x, y) {
     // ctx.fill()
 
 }
-function clearCanvas(){
-    ctx.clearRect(0,0,canvas.width,canvas.height)
+
+function drawLine(x, y) {
+    ctx.beginPath()
+    ctx.lineTo(x, y)
+    ctx.lineTo(x+40, y+40)
+    ctx.closePath()
+    ctx.lineWidth = 1
+    ctx.strokeStyle = getColor()
+    ctx.stroke();
 }
 
 function drawSquare(x, y) {
@@ -77,4 +94,18 @@ function drawSquare(x, y) {
     // ctx.fillRect(x, y, 100, 100)
     ctx.stroke()
     // ctx.fill()
+}
+
+function drawArc(x, y) {
+    ctx.beginPath();
+    ctx.arc(x, y, 40, 0, 1 * Math.PI);
+    ctx.strokeStyle = getColor()
+    ctx.stroke();
+}
+
+function drawCircle(x, y) {
+    ctx.beginPath();
+    ctx.arc(x, y, 30, 0, 2 * Math.PI);
+    ctx.strokeStyle = getColor()
+    ctx.stroke();
 }
