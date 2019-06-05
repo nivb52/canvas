@@ -9,8 +9,8 @@ let currEvent
 let prevEvent
 let movementY, movementX, movement
 
-const X_FACTOR = 10
-const Y_FACTOR = 10
+const X_FACTOR = 20
+const Y_FACTOR = 20
 
 function init() {
     canvas = document.querySelector('#my-canvas');
@@ -118,7 +118,7 @@ function drawSquare(x, y) {
     // USE : ctx.fillRect(x, y, 100, 100)
     // AND : ctx.fill()
 
-    ctx.rect(x, y, movementX + X_FACTOR, movementY + Y_FACTOR)
+    ctx.rect(x, y, movementX + X_FACTOR +10, movementY + Y_FACTOR)
     ctx.strokeStyle = getColor()
     ctx.stroke()
 }
