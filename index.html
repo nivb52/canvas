@@ -8,7 +8,9 @@
     <title>Canvas painting - Niv & Tamir</title>
     <link rel="stylesheet" href="css/main.css" />
 </head>
+
 <body onload="init()">
+
     <h1> The Canvas Tamir and Niv</h1>
     <button onclick="changeEl('triangle')">Triangle</button>
     <button onclick="changeEl('square')">Square</button>
@@ -33,9 +35,8 @@
         <option id="11">CIRCLES</option>
         <option id="12">GRID</option>
     </select> -->
-    
-    <canvas onclick="draw(event)" width="500" height="500" style="cursor: crosshair;"></canvas>
 
+    <canvas onclick="draw(event)" width="500" id="my-canvas" height="500" style="cursor: crosshair;">Update your browser to enjoy canvas!</canvas>
 
 
     <script src="js/‏‏canvas-util.js"></script>

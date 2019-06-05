@@ -1,8 +1,8 @@
 'use strict'
 
 function drawTriangle(x, y) {
-    ctx.beginPath(x, y);
-    ctx.moveTo(0, 0);
+    ctx.beginPath();
+    ctx.moveTo(x, y);
     ctx.lineTo(300, 150);
     ctx.lineTo(100, 100);
     ctx.closePath()
