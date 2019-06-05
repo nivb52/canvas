@@ -1,5 +1,5 @@
 'use strict'
-console.log('paint me, i am ready!')
+console.log('Start painting dear - Im here :)')
 
 let canvas
 let ctx
@@ -49,9 +49,11 @@ function draw(ev) {
 }
 
 let gIsDraw = false
+
 function onStartDraw() {
     gIsDraw = true
 }
+
 function onStopDraw() {
     gIsDraw = false
 }
@@ -71,7 +73,7 @@ function drawTriangle(x, y) {
     ctx.closePath()
     ctx.lineWidth = 1;
     ctx.strokeStyle = getColor()
-    // ctx.fillStyle = getColor() //'#ff0000'
+        // ctx.fillStyle = getColor() //'#ff0000'
     ctx.stroke();
     // ctx.fill()
 
@@ -80,7 +82,7 @@ function drawTriangle(x, y) {
 function drawLine(x, y) {
     ctx.beginPath()
     ctx.lineTo(x, y)
-    ctx.lineTo(x+40, y+40)
+    ctx.lineTo(x + 40, y + 40)
     ctx.closePath()
     ctx.lineWidth = 1
     ctx.strokeStyle = getColor()
@@ -91,9 +93,9 @@ function drawSquare(x, y) {
     //TODO: isFill if yes to make it fill
     ctx.rect(x, y, 100, 100)
     ctx.fillStyle = getColor()
-    // ctx.fillRect(x, y, 100, 100)
+        // ctx.fillRect(x, y, 100, 100)
     ctx.stroke()
-    // ctx.fill()
+        // ctx.fill()
 }
 
 function drawArc(x, y) {
@@ -108,4 +110,10 @@ function drawCircle(x, y) {
     ctx.arc(x, y, 30, 0, 2 * Math.PI);
     ctx.strokeStyle = getColor()
     ctx.stroke();
+}
+
+function downloadCanvas(elLink) {
+    const data = canvas.toDataURL()
+    elLink.href = data
+    elLink.download = 'my-img.jpg'
 }

@@ -11,14 +11,16 @@
 
 <body onload="init()">
 
-    <h1> The Canvas Tamir and Niv</h1>
+    <h1> Paint on canvas </h1>
+    <br>
     <button onclick="changeEl('triangle')">Triangle</button>
     <button onclick="changeEl('square')">Square</button>
     <button onclick="changeEl('circle')">Circle</button>
     <button onclick="changeEl('arc')">Arc</button>
     <button onclick="changeEl('line')">Line</button>
-    <input onclick="getColor()" id="fill-color" type="color">
-    <button class="button">Save</button>
+    <input onclick="getColor()" id="fill-color" type="color" value="#ff0022">
+    <!-- Todo: share -->
+    <button class="button">Share</button>
 
     <button><a href="#" onclick="downloadCanvas(this)" download="">Download</a></button>
 
@@ -32,17 +34,12 @@
         <option id="3">FUR</option>
         <option id="4">LONGFUR</option>
         <option id="5">WEB</option>
-        <option id="6"></option>
         <option id="7">SIMPLE</option>
-        <option id="8">SQUARES</option>
         <option id="9">RIBBON</option>
-        <option id="10"></option>
-        <option id="11">CIRCLES</option>
         <option id="12">GRID</option>
     </select> -->
 
-    <canvas 
-    onmouseout="onStopDraw()" onmousedown="onStartDraw()" onmouseup="onStopDraw()" onmousemove="draw(event)"  width="500" id="my-canvas" height="500" style="cursor: crosshair;">
+    <canvas onmouseout="onStopDraw()" onmousedown="onStartDraw()" onmouseup="onStopDraw()" onmousemove="draw(event)" width="500" id="my-canvas" height="500" style="cursor: crosshair;">
         Update your browser to enjoy canvas!
     </canvas>
 
