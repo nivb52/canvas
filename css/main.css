@@ -97,9 +97,10 @@ h1 {
     border: 1px solid rgb(17, 151, 12);
     background-color: bisque;
     text-align: center;
-    width: 220px;
+    width: 400px;
     margin-top: 30px;
-    margin-left: 140px;
+    margin-left: 68px;
+    padding: 5px;
 }
 
 

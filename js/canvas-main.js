@@ -1,5 +1,4 @@
 'use strict'
-console.log('Start painting dear - Im here :)')
 
 let canvas
 let ctx
