@@ -16,10 +16,12 @@
     <button onclick="changeEl('square')">Square</button>
     <button onclick="changeEl('circle')">Circle</button>
     <input onclick="getColor()" id="fill-color" type="color">
-    <span class="button">Save</span>
-    <span><a href="#" onclick="downloadCanvas(this)" download="">Download</a></span>
-    <clear class="button">Clear</clear>
-    <about class="button">About</about>
+    <button class="button">Save</button>
+
+    <button><a href="#" onclick="downloadCanvas(this)" download="">Download</a></button>
+
+    <button onclick="clearCanvas()" class="button">Clear</button>
+    <!-- <button class="button">About</button> -->
     <!-- Inspiration  -->
     <!-- <select>
         <option id="0">SKETCHY</option>
@@ -37,9 +39,12 @@
         <option id="12">GRID</option>
     </select> -->
 
-    <canvas onclick="draw(event)" width="500" id="my-canvas" height="500" style="cursor: crosshair;">
+    <canvas 
+    onmouseout="onStopDraw()" onmousedown="onStartDraw()" onmouseup="onStopDraw()" onmousemove="draw(event)"  width="500" id="my-canvas" height="500" style="cursor: crosshair;">
         Update your browser to enjoy canvas!
     </canvas>
+
+    <!-- onclick="draw(event)" -->
 
 
     <script src="js/‏‏canvas-util.js"></script>

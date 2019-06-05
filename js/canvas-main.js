@@ -1,5 +1,5 @@
 'use strict'
-console.log('CANVAS!')
+console.log('paint me, i am ready!')
 
 let canvas
 let ctx
@@ -17,7 +17,6 @@ function init() {
 
 function getColor() {
     let fillColor = document.querySelector('#fill-color').value
-    console.log(fillColor);
     return fillColor
 }
 
@@ -26,6 +25,7 @@ function changeEl(elName) {
 }
 
 function draw(ev) {
+    if (!gIsDraw) return
     ctx.save()
     const { offsetX, offsetY } = ev
     switch (currElement) {
@@ -42,30 +42,39 @@ function draw(ev) {
     ctx.restore()
 }
 
-
-
-
-function drawTriangle(x, y) {
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(300, 150);
-    ctx.lineTo(100, 100);
-    ctx.closePath()
-
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = getColor()
-    ctx.fillStyle = getColor() //'#ff0000'
-
-    ctx.stroke();
-    ctx.fill()
-
+let gIsDraw = false
+function onStartDraw() {
+    gIsDraw = true
+}
+function onStopDraw() {
+    gIsDraw = false
 }
 
 
+function drawTriangle(x, y) {
+    // TODO: isFill if yes to make it fill
+    // TODO: USER CHOOSE lineWidth 
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x-50, y-30);
+    ctx.lineTo(x+30, y+50);
+    ctx.closePath()
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = getColor()
+    // ctx.fillStyle = getColor() //'#ff0000'
+    ctx.stroke();
+    // ctx.fill()
+
+}
+function clearCanvas(){
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+}
+
 function drawSquare(x, y) {
+    //TODO: isFill if yes to make it fill
     ctx.rect(x, y, 100, 100)
     ctx.fillStyle = getColor()
-    ctx.fillRect(x, y, 100, 100)
+    // ctx.fillRect(x, y, 100, 100)
     ctx.stroke()
-    ctx.fill()
+    // ctx.fill()
 }
