@@ -7,55 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Canvas painting - Niv & Tamir</title>
     <link rel="stylesheet" href="css/main.css" />
-
 </head>
-
-<body>
-
-
-
-
-
-
-
-
-    <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
-
-
+<body onload="init()">
+    <h1> The Canvas Tamir and Niv</h1>
     <button onclick="changeEl('triangle')">Triangle</button>
     <button onclick="changeEl('square')">Square</button>
     <button onclick="changeEl('circle')">Circle</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <span class="button">Save</span>
+    <span><a href="#" onclick="downloadCanvas(this)" download="">Download</a></span>
+    <clear class="button">Clear</clear>
+    <about class="button">About</about>
+    <!-- Inspiration  -->
+    <!-- <select>
+        <option id="0">SKETCHY</option>
+        <option id="1">SHADED</option>
+        <option id="2">CHROME</option>
+        <option id="3">FUR</option>
+        <option id="4">LONGFUR</option>
+        <option id="5">WEB</option>
+        <option id="6"></option>
+        <option id="7">SIMPLE</option>
+        <option id="8">SQUARES</option>
+        <option id="9">RIBBON</option>
+        <option id="10"></option>
+        <option id="11">CIRCLES</option>
+        <option id="12">GRID</option>
+    </select> -->
+    
+    <canvas onclick="draw(event)" width="500" height="500" style="cursor: crosshair;"></canvas>
 
 
 
