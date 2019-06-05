@@ -43,6 +43,9 @@ function draw(ev) {
         case 'line':
             drawLine(offsetX, offsetY)
             break;
+        case 'dots':
+            drawDots(offsetX, offsetY)
+            break;
     }
     ctx.restore()
 }
@@ -68,20 +71,29 @@ function drawTriangle(x, y) {
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x - 50, y - 30);
-    ctx.lineTo(x + 30, y + 50);
+    ctx.lineTo(x + 10, y + 60);
     ctx.closePath()
     ctx.lineWidth = 1;
     ctx.strokeStyle = getColor()
         // ctx.fillStyle = getColor() //'#ff0000'
     ctx.stroke();
     // ctx.fill()
-
 }
 
 function drawLine(x, y) {
     ctx.beginPath()
     ctx.lineTo(x, y)
-    ctx.lineTo(x + 40, y + 40)
+    ctx.lineTo(x + 20, y + 40)
+    ctx.closePath()
+    ctx.lineWidth = 1
+    ctx.strokeStyle = getColor()
+    ctx.stroke();
+}
+
+function drawDots(x, y) {
+    ctx.beginPath()
+    ctx.lineTo(x, y)
+    ctx.lineTo(x + 2, y + 2)
     ctx.closePath()
     ctx.lineWidth = 1
     ctx.strokeStyle = getColor()
